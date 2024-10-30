@@ -20,12 +20,13 @@ const createPurchase=async(req,res)=>{
 const getPurchase=async(req,res)=>{
     try {
         const {id}=req.query
-        let purchase
+        let purchase=[]
         if(!purchase){
             purchase =await Purchase.findById(id)
         }else{
-            purchase=await Purchase.find()
+            purchase=await Purchase.find().populate("supplierName")
         }
+        console.log(purchase,'purchase')
         return res.status(200).json({
             status:'success',
             message:'purchase find successfully',

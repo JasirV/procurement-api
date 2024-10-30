@@ -2,7 +2,7 @@ const mongoose=require('mongoose')
 const AuthoIncrement=require('mongoose-sequence')(mongoose)
 
 const itemSchema=mongoose.Schema({
-    itemNo:{type:Number,unique:true,required:true},
+    itemNo:{type:Number,unique:true},
     itemName:{type:String,required:true},
     inventoryLocation:{type:String,required:true},
     brand:{type:String,required:true},
